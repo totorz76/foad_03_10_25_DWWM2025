@@ -17,9 +17,6 @@ a{
     color: black;
 }
 /* header */
-header .container button{
-    border: none;
-}
 #dl{
     background-color: #4CB050;
     color: white;
@@ -35,6 +32,7 @@ header .container button{
     color: white;
     display: block;
     text-align: center;
+    order: 3;
 }
 h1{
     font-size: 16px;
@@ -44,6 +42,18 @@ h1{
 #headerimg{
     max-width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.dlbloc{
+    order: 1;
+}
+#headerimg img{
+order: 2;
+}
+.bloctitle, .blocdesc{
+    display: none;
 }
 /* The App */
 #app{
@@ -162,11 +172,10 @@ h3{
 #pricing .container span{
     font-weight: bold;
 }
-#pricing .container h4{
+#pricing .container h3{
     font-size: 20px;
     padding: 2rem 0;
     width: 100%;
-    background-color:#616161;
     color: white;
 }
 #pricing .container p{
@@ -176,7 +185,7 @@ h3{
     display: block;
     width: 100%;
 }
-#pricing .container h5{
+#pricing .container h4{
     font-size: 25px;
     color: #666666;
     width: 100%;
@@ -206,6 +215,9 @@ h3{
     background-color: #F1F1F1;
     width: 100%;
 }
+#basic h3{
+    background-color:#616161;
+}
 #premium{
     box-shadow: 2px 2px 2px lightgrey;
     margin-bottom: 2rem;
@@ -217,6 +229,9 @@ h3{
     background-color: #F1F1F1;
     width: 100%;
 }
+#premium h3 {
+    background-color: #F54337;
+}
 /* footer */
 footer .container{
     display: flex;
@@ -225,5 +240,95 @@ footer .container{
     background-color: #F1F1F1;
     padding: 2rem 0;
 }
-@media screen and(min-width:578px){  
+@media screen and (min-width:576px){  
+    /* header */
+    header.container{
+        display: flex;
+        width: 100%;
+        height: 100vh;
+    }
+    #headerimg{
+        position: relative;
+    }
+    .dlbloc{
+        position: absolute;
+        background-color: black;
+        opacity: 70%;
+        padding: 1.5rem;
+        border-radius: 10px;
+        text-align: center;
+        top: 30%;
+        margin-left: 1rem;
+    }
+    #tour{
+        position: absolute;
+        background-color: black;
+        padding: .5rem 1rem;
+        text-align: center;
+        right: 0;
+        top: 40%;
+        width: fit-content;
+        margin-right: 1rem;
+    }
+    .bloctitle, .blocdesc{
+        display: block;
+        color: white;
+        padding: 1rem;
+    }
+    .bloctitle{
+        border-bottom: #5D5855 solid 1px;
+    }
+    /* app */
+    #app{
+        flex-direction: row;
+    }
+    #app .desc{
+        width: 70%;
+    }
+    #app .desc h2,#app .desch3,.pdesc{
+        order: 1;
+    }
+    #app a{
+        order: 2;
+        align-self: unset;
+        background-color: #F1F1F1;
+        width: fit-content;
+        padding: .5rem 1rem;
+        margin: 2rem 0;
+    }
+    .descdl{
+        order: 3;
+    }
+    #bgimg1{
+        padding-left: 2rem;
+    }
+    /* Clarity */
+    #clarity{
+    display: flex;
+    flex-direction: row-reverse;
+    }
+    #bgimg2{
+        display: block;
+        padding-right: 2rem;
+    }
+    #clarity .desc{
+        width: 70%;
+        padding-left: 1rem;
+    }
+    /* Features */
+    #features .micon {
+        display: none;
+    }
+    /* Pricing */
+    #pricing .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #basic{
+        width: 49.25%;
+    }
+    #premium{
+        width: 49.25%;
+    }
 }
